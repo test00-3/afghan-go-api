@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: afghan-go-api
+    runtime: node
+    plan: free
+    buildCommand: npm install && npx tsc src/server.ts --outDir dist --esModuleInterop --resolveJsonModule --skipLibCheck --target ES2020 --module commonjs
+    startCommand: node dist/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: SUPABASE_URL
+        value: https://otucehrhxzeihxoqwzah.supabase.co
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
