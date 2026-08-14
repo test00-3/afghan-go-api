@@ -4,7 +4,7 @@
   "description": "Afghan bus ticket booking API",
   "main": "dist/server.js",
   "scripts": {
-    "build": "tsc",
+    "build": "npx tsc",
     "start": "node dist/server.js"
   },
   "dependencies": {
